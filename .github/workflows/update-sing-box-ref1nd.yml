@@ -1,0 +1,53 @@
+name: Update sing-box-ref1nd
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-sing-box-ref1nd
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+
+      - name: Update formula from latest alpha release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ruby scripts/update-sing-box-ref1nd.rb
+
+      - name: Detect formula changes
+        id: changes
+        run: |
+          if git diff --quiet -- Formula/sing-box-ref1nd.rb; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit updated formula
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          version="$(ruby -e 'puts File.read("Formula/sing-box-ref1nd.rb")[/version \"([^\"]+)\"/, 1]')"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Formula/sing-box-ref1nd.rb
+          git commit -m "sing-box-ref1nd: bump to ${version}"
+
+      - name: Push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: git push origin HEAD:${{ github.ref_name }}
