@@ -2,7 +2,7 @@
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform (reF1nd build)"
   homepage "https://github.com/reF1nd/sing-box-releases"
-  version "1.14.0-alpha.26-reF1nd"
+  version "1.14.0-alpha.27-reF1nd"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,25 +13,25 @@ class SingBoxRef1nd < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.26-reF1nd/sing-box-1.14.0-alpha.26-reF1nd-darwin-arm64.tar.gz"
-      sha256 "b5b13328a5e21ebc770a3ef637a325fad2cb447872971f1f51dd43949bf815ba"
+      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.27-reF1nd/sing-box-1.14.0-alpha.27-reF1nd-darwin-arm64.tar.gz"
+      sha256 "0525b8634129b70715b5c7b4447e2756b48f1785efffaee80c2f710d9613a84c"
     end
 
     on_intel do
-      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.26-reF1nd/sing-box-1.14.0-alpha.26-reF1nd-darwin-amd64.tar.gz"
-      sha256 "4f0332c905f03916da0ac39984f7878a3a5100f1a3571416a8bb75a6d3483c37"
+      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.27-reF1nd/sing-box-1.14.0-alpha.27-reF1nd-darwin-amd64.tar.gz"
+      sha256 "a7ed9a78ab7ae7e80cd9a5bf7a31b8a00e4e929010b6ac1865362a0482f4dbca"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.26-reF1nd/sing-box-1.14.0-alpha.26-reF1nd-linux-arm64-glibc.tar.gz"
-      sha256 "7bfbaf276f740cf5a615c02030b36461a303a164468246981ce7ec0dabce45bd"
+      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.27-reF1nd/sing-box-1.14.0-alpha.27-reF1nd-linux-arm64-glibc.tar.gz"
+      sha256 "b264311959df8f98b309f50a4307d90cd7faa22ad492622f2535a55066fa09e9"
     end
 
     on_intel do
-      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.26-reF1nd/sing-box-1.14.0-alpha.26-reF1nd-linux-amd64-glibc.tar.gz"
-      sha256 "13c0b37155fd5b22a5f32d8a4dfce82cabd12da2faa971e50d45f03dc311dd57"
+      url "https://github.com/reF1nd/sing-box-releases/releases/download/v1.14.0-alpha.27-reF1nd/sing-box-1.14.0-alpha.27-reF1nd-linux-amd64-glibc.tar.gz"
+      sha256 "08cb8e62d6836cbe8607fddf80069d1a3b735a688781585d74824bd2b16599ce"
     end
   end
 
