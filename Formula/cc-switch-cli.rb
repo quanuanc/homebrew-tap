@@ -4,23 +4,20 @@ class CcSwitchCli < Formula
   version "5.2.1"
   license "MIT"
 
-  on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/SaladDay/cc-switch-cli/releases/download/v5.2.1/cc-switch-cli-darwin-arm64.tar.gz"
-      sha256 "fd065a4b81fabd4ce7b7077bcc932aef194af02604c51ea8097c0eda7ca77985"
+  depends_on :macos
 
-      def install
-        bin.install "cc-switch" => "cc-switch"
-      end
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/SaladDay/cc-switch-cli/releases/download/v5.2.1/cc-switch-cli-darwin-x64.tar.gz"
-      sha256 "02d04589c92fb5b65856f93696c80ff4f5aef6cada356e0751fd395bb169ab61"
+  on_arm do
+    url "https://github.com/SaladDay/cc-switch-cli/releases/download/v5.2.1/cc-switch-cli-darwin-arm64.tar.gz"
+    sha256 "fd065a4b81fabd4ce7b7077bcc932aef194af02604c51ea8097c0eda7ca77985"
+  end
 
-      def install
-        bin.install "cc-switch" => "cc-switch"
-      end
-    end
+  on_intel do
+    url "https://github.com/SaladDay/cc-switch-cli/releases/download/v5.2.1/cc-switch-cli-darwin-x64.tar.gz"
+    sha256 "02d04589c92fb5b65856f93696c80ff4f5aef6cada356e0751fd395bb169ab61"
+  end
+
+  def install
+    bin.install "cc-switch"
   end
 
   def post_install
