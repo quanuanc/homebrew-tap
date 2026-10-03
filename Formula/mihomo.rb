@@ -1,4 +1,4 @@
-# This file is updated by scripts/update-mihomo.rb.
+# This file is updated by .github/scripts/update-mihomo.rb.
 class Mihomo < Formula
   desc "Rule-based proxy with Smart Groups (vernesong Alpha build)"
   homepage "https://github.com/vernesong/mihomo"
@@ -6,7 +6,7 @@ class Mihomo < Formula
   license "GPL-3.0-or-later"
 
   livecheck do
-    skip "Rolling prerelease: updated by scripts/update-mihomo.rb"
+    skip "Rolling prerelease: updated by .github/scripts/update-mihomo.rb"
   end
 
   depends_on :macos

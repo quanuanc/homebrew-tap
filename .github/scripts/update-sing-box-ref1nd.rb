@@ -5,7 +5,7 @@ require "net/http"
 require "uri"
 
 RELEASES_REPO = "reF1nd/sing-box-releases"
-FORMULA_PATH = File.expand_path("../Formula/sing-box-ref1nd.rb", __dir__)
+FORMULA_PATH = File.expand_path("../../Formula/sing-box-ref1nd.rb", __dir__)
 ASSET_SUFFIXES = [
   "darwin-arm64",
   "darwin-amd64",
@@ -71,7 +71,7 @@ sha256_by_suffix = ASSET_SUFFIXES.to_h do |suffix|
 end
 
 content = <<~'RUBY'
-  # This file is updated by scripts/update-sing-box-ref1nd.rb.
+  # This file is updated by .github/scripts/update-sing-box-ref1nd.rb.
   class SingBoxRef1nd < Formula
     desc "Universal proxy platform (reF1nd build)"
     homepage "https://github.com/reF1nd/sing-box-releases"

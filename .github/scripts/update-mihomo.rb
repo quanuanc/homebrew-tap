@@ -5,7 +5,7 @@ require "net/http"
 require "time"
 require "uri"
 
-FORMULA_PATH = File.expand_path("../Formula/mihomo.rb", __dir__)
+FORMULA_PATH = File.expand_path("../../Formula/mihomo.rb", __dir__)
 uri = URI("https://api.github.com/repos/vernesong/mihomo/releases/tags/Prerelease-Alpha")
 request = Net::HTTP::Get.new(uri)
 request["Accept"] = "application/vnd.github+json"

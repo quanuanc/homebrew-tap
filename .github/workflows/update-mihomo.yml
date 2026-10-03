@@ -27,7 +27,7 @@ jobs:
       - name: Update formula from latest alpha release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ruby scripts/update-mihomo.rb
+        run: ruby .github/scripts/update-mihomo.rb
 
       - name: Commit and push formula changes
         run: |

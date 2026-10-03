@@ -1,4 +1,4 @@
-# This file is updated by scripts/update-sing-box-ref1nd.rb.
+# This file is updated by .github/scripts/update-sing-box-ref1nd.rb.
 class SingBoxRef1nd < Formula
   desc "Universal proxy platform (reF1nd build)"
   homepage "https://github.com/reF1nd/sing-box-releases"

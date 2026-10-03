@@ -28,7 +28,7 @@ jobs:
       - name: Update formula from latest alpha release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: ruby scripts/update-sing-box-ref1nd.rb
+        run: ruby .github/scripts/update-sing-box-ref1nd.rb
 
       - name: Detect formula changes
         id: changes
