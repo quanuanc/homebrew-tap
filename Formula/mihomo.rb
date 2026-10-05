@@ -2,7 +2,7 @@
 class Mihomo < Formula
   desc "Rule-based proxy with Smart Groups (vernesong Alpha build)"
   homepage "https://github.com/vernesong/mihomo"
-  version "2026.10.05.034932"
+  version "2026.10.05.064044"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -13,13 +13,13 @@ class Mihomo < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-darwin-arm64-alpha-smart-70ef6d8.gz"
-      sha256 "a5af9587e9eef517bb555e190e2d0dbfadb01dd464eb1e25a4cd733ace0f32ea"
+      url "https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-darwin-arm64-alpha-smart-512b09d.gz"
+      sha256 "8c5d72cc421099ad156dec7f4e6f844ea0a014e37ff0af1d258e180d099c9970"
     end
 
     on_intel do
-      url "https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-darwin-amd64-compatible-alpha-smart-70ef6d8.gz"
-      sha256 "719487374cf72964630f1678ed674146ed7800382ba544d3fd89027ea55c715e"
+      url "https://github.com/vernesong/mihomo/releases/download/Prerelease-Alpha/mihomo-darwin-amd64-compatible-alpha-smart-512b09d.gz"
+      sha256 "195b7e78351614ed60ff39d9c434d9d00d7a1545d92e851f217c2a03ab4a9a72"
     end
   end
 
@@ -46,7 +46,7 @@ class Mihomo < Formula
   end
 
   test do
-    assert_match "alpha-smart-70ef6d8", shell_output("#{bin}/mihomo -v")
+    assert_match "alpha-smart-512b09d", shell_output("#{bin}/mihomo -v")
 
     (testpath/"config.yaml").write <<~YAML
       mode: rule
