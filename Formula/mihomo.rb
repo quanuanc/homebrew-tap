@@ -23,6 +23,8 @@ class Mihomo < Formula
     end
   end
 
+  conflicts_with "mihomo-source", because: "both install a mihomo binary"
+
   def install
     bin.install Dir["mihomo-darwin-*"].first => "mihomo"
     (etc/"mihomo").mkpath

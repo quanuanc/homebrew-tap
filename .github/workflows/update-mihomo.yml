@@ -24,19 +24,19 @@ jobs:
         with:
           ruby-version: "3.3"
 
-      - name: Update formula from latest alpha release
+      - name: Update formulae from latest alpha release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ruby .github/scripts/update-mihomo.rb
 
       - name: Commit and push formula changes
         run: |
-          if git diff --quiet -- Formula/mihomo.rb; then
+          if git diff --quiet -- Formula/mihomo.rb Formula/mihomo-source.rb; then
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add Formula/mihomo.rb
-          git commit -m "mihomo: update Alpha build"
+          git add Formula/mihomo.rb Formula/mihomo-source.rb
+          git commit -m "mihomo: update Alpha binary and source builds"
           git pull --rebase origin "${{ github.ref_name }}"
           git push origin "HEAD:${{ github.ref_name }}"
