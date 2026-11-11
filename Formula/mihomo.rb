@@ -2,9 +2,9 @@
 class Mihomo < Formula
   desc "Rule-based proxy with Smart Groups (built from source)"
   homepage "https://github.com/vernesong/mihomo"
-  url "https://github.com/vernesong/mihomo/archive/96feb2a175eb65b05ae2a60d222a279f90990695.tar.gz"
-  version "2026.11.06.193948"
-  sha256 "4f1bed6cb4483b3666b46670fa8938a6d51f4d9b0a54feaff2b185b8d835eac2"
+  url "https://github.com/vernesong/mihomo/archive/f8257cef69a3ef442488dee808b452d4072b168d.tar.gz"
+  version "2026.11.11.070302"
+  sha256 "250dd2afb44e09a6d169644f945eb96b21525413edb805e9bcdead0b1a9870d6"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -25,7 +25,7 @@ class Mihomo < Formula
     ENV["GOPROXY"] = "off"
     ENV["GOSUMDB"] = "off"
     ldflags = %W[
-      -X=github.com/metacubex/mihomo/constant.Version=alpha-smart-96feb2a
+      -X=github.com/metacubex/mihomo/constant.Version=alpha-smart-f8257ce
       -X=github.com/metacubex/mihomo/constant.BuildTime=#{time.iso8601}
       -B=gobuildid
     ]
@@ -51,7 +51,7 @@ class Mihomo < Formula
   end
 
   test do
-    assert_match "alpha-smart-96feb2a", shell_output("#{bin}/mihomo -v")
+    assert_match "alpha-smart-f8257ce", shell_output("#{bin}/mihomo -v")
     assert_match "LC_UUID", shell_output("/usr/bin/otool -l #{bin}/mihomo")
 
     (testpath/"config.yaml").write <<~YAML
